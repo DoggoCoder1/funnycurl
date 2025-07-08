@@ -1,15 +1,9 @@
-const http = require('http');
-const fs = require('fs');
+// api/server.js
 
-http.createServer((req, res) => {
-  fs.readFile('script.sh', 'utf8', (err, data) => {
-    if (err) {
-      res.writeHead(500, {'Content-Type': 'text/plain'});
-      res.end('Error reading file');
-      return;
-    }
-
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end(data);
-  });
-})
+export default function handler(req, res) {
+  res.setHeader('Content-Type', 'text/plain');
+  res.end(`#!/bin/bash
+clear
+echo "YOU ARE HAKCKDED AHAHAHHAHAHSHDAHHHAHHAHHAHHHAHHAHAAH"
+`);
+}
