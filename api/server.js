@@ -1,19 +1,6 @@
 const http = require('http');
-const { exec } = require('child_process');
 
 http.createServer((req, res) => {
-  exec('echo you have been hacked hahahahahhahaha', (error, stdout, stderr) => {
-    if (error) {
-      res.writeHead(500, {'Content-Type': 'text/plain'});
-      res.end(`Error: ${error.message}\n`);
-      return;
-    }
-    if (stderr) {
-      res.writeHead(500, {'Content-Type': 'text/plain'});
-      res.end(`stderr: ${stderr}\n`);
-      return;
-    }
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end(stdout);
-  });
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('clear; echo sup yo');
 }).listen(3000);
