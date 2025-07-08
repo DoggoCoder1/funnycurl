@@ -12,6 +12,6 @@ for i in {1..300}; do
 done
 echo "Transferring files to remote server..."
 sleep 2
-echo "All files have been stolen successfully."
+echo "files stolen lel"
 `);
 }
