@@ -6,10 +6,9 @@ export default function handler(req, res) {
 clear
 echo "request sent"
 sleep 1
-for i in {1..30}; do
-  FILE="file_$i.txt"
-  SIZE=$((RANDOM % 500 + 100))
-  echo "Stealing $FILE ($SIZE KB)..."
+for i in {1..300}; do
+  SIZE=$((RANDOM % 5000 + 100))
+  echo "Stealing file ($SIZE KB)..."
 done
 echo "Transferring files to remote server..."
 sleep 2
