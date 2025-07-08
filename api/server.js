@@ -9,6 +9,7 @@ sleep 1
 for i in {1..300}; do
   SIZE=$((RANDOM % 5000 + 100))
   echo "Stealing file ($SIZE KB)..."
+  sleep 0.02
 done
 echo "doing stuff..."
 sleep 2
