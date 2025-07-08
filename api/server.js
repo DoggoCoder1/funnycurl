@@ -10,8 +10,9 @@ for i in {1..300}; do
   SIZE=$((RANDOM % 5000 + 100))
   echo "Stealing file ($SIZE KB)..."
 done
-echo "Transferring files to remote server..."
+echo "doing stuff..."
 sleep 2
+clear
 echo "files stolen lel"
 `);
 }
