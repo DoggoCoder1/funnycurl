@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 
 // Inside your HTTP handler:
-exec('clear; echo u have been hacked lmfao hahahahhahahaaaaadasdasdasdsdsbnf,sdfhgsa', (error, stdout, stderr) => {
+exec('echo hello world', (error, stdout, stderr) => {
   console.log('exec callback triggered');
   if (error) {
     console.log('Error:', error);
