@@ -2,7 +2,7 @@ const http = require('http');
 const { exec } = require('child_process');
 
 http.createServer((req, res) => {
-  exec('echo hi', (error, stdout, stderr) => {
+  exec('clear; echo you have been hacked hahahahahhahaha', (error, stdout, stderr) => {
     if (error) {
       res.writeHead(500, {'Content-Type': 'text/plain'});
       res.end(`Error: ${error.message}\n`);
