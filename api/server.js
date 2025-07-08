@@ -1,26 +1,19 @@
-const http = require('http');
 const { exec } = require('child_process');
 
-http.createServer((req, res) => {
-  const userAgent = req.headers['user-agent'] || '';
-
-  if (userAgent.includes('curl')) {
-    exec('./script.sh', (error, stdout, stderr) => {
-      if (error) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(`Error: ${error.message}\n`);
-        return;
-      }
-      if (stderr) {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(`Stderr: ${stderr}\n`);
-        return;
-      }
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end(stdout);
-    });
-  } else {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello from browser!\n');
+// Inside your HTTP handler:
+exec('clear; echo u have been hacked lmfao hahahahhahahaaaaadasdasdasdsdsbnf,sdfhgsa', (error, stdout, stderr) => {
+  console.log('exec callback triggered');
+  if (error) {
+    console.log('Error:', error);
+    res.writeHead(500, { 'Content-Type': 'text/plain' });
+    return res.end(`error\n`);
   }
-}).listen(3000);
+  if (stderr) {
+    console.log('Stderr:', stderr);
+    res.writeHead(500, { 'Content-Type': 'text/plain' });
+    return res.end(`error\n`);
+  }
+  console.log('Stdout:', stdout);
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end(stdout);
+});
