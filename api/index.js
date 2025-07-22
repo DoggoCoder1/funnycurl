@@ -4,6 +4,7 @@ export default function handler(req, res) {
 clear
 for i in {1..30}; do
     echo "WOWOWOOWOWOOWOWOWOOWOWOOWOWOOWOOWOWOWOOOOWOWO"
+    sleep 0.1
 done
 `);
 }
