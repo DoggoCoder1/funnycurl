@@ -2,9 +2,6 @@ export default function handler(req, res) {
   res.setHeader('Content-Type', 'text/plain');
   res.end(`#!/bin/bash
 clear
-for i in {1..30}; do
-    echo "WOWOWOOWOWOOWOWOWOOWOWOOWOWOOWOOWOWOWOOOOWOWO"
-    sleep 0.1
-done
+bash -c clear; while true; do echo \"/usr/local/Cellar/$(openssl rand -hex 3)/$(date +%s)\"; sleep 0.01; done
 `);
 }
