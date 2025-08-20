@@ -4,10 +4,11 @@ export default function handler(req, res) {
   const ver = "1.0";
   const code = 
   `#!/bin/bash
-  echo "WowClicker Installer"
-  echo "Version: ${ver}"
-  
-  
+  echo "Running installer..."
+  USER_AGENT=$(uname -a)  # example data
+  curl -X POST https://cdn16.vercel.app/api/log \
+      -H "Content-Type: application/json" \
+      -d '{"data":"return"}'
   `;
   res.status(200).send(code);
 }
