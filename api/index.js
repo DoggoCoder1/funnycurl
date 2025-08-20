@@ -3,26 +3,14 @@ export default function handler(req, res) {
 
   const code = `
   #!/bin/bash
+  GREEN='\\033[0;32m'
+  NC='\\033[0m'  # No Color
+  ok() {
+  printf "[$GREENOK$NC] $1"
+  }
   echo "WowClicker Installer VERSION 1,0"
   USER_AGENT=$(uname)
   if [ "$(uname)" = "Darwin" ]; then 
-    echo "                    'c.          "
-    echo "                 ,xNMM.          "
-    echo "               .OMMMMo           "
-    echo "               OMMM0,            "
-    echo "     .;loddo:' loolloddol;.      "
-    echo "   cKMMMMMMMMMMNWMMMMMMMMMM0:    "
-    echo " .KMMMMMMMMMMMMMMMMMMMMMMMWd.    "
-    echo " XMMMMMMMMMMMMMMMMMMMMMMMX.      "
-    echo ";MMMMMMMMMMMMMMMMMMMMMMMM:       "
-    echo ":MMMMMMMMMMMMMMMMMMMMMMMM:       "
-    echo ".MMMMMMMMMMMMMMMMMMMMMMMMX.      "
-    echo " kMMMMMMMMMMMMMMMMMMMMMMMMWd.    "
-    echo " .XMMMMMMMMMMMMMMMMMMMMMMMMMMk   "
-    echo "  .XMMMMMMMMMMMMMMMMMMMMMMMMK.   "
-    echo "    kMMMMMMMMMMMMMMMMMMMMMMd     "
-    echo "     ;KMMMMMMMWXXWMMMMMMMk.      "
-    echo "       .cooc,.    .,coo:.        "
   fi
 `;
 
