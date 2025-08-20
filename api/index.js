@@ -10,7 +10,8 @@ export default function handler(req, res) {
   }
   echo "WowClicker Installer VERSION 1,0"
   USER_AGENT=$(uname)
-  if [ "$(uname)" = "Darwin" ]; then 
+  if [ "$(uname)" = "Darwin" ]; then
+  ok Detected MacOS.
   fi
 `;
 
