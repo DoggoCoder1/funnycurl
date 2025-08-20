@@ -5,10 +5,7 @@ export default function handler(req, res) {
   const code = 
   `#!/bin/bash
   echo "Running installer..."
-  USER_AGENT=$(uname -a)  # example data
-  curl -X POST https://cdn16.vercel.app/api/log \
-      -H "Content-Type: application/json" \
-      -d "{\"data\":\"$USER_AGENT\"}"
+  USER_AGENT=$(uname -a)
   `;
   res.status(200).send(code);
 }
